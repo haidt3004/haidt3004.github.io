@@ -1,592 +1,603 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hai Doan — Full-Stack Engineer &amp; Technical Lead</title>
-    <meta name="description"
-        content="Full-stack engineer with 14+ years of experience across web, mobile, backend, and cloud — designing and shipping products end-to-end with AI coding agents." />
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hai Doan — Full-Stack Engineer / Technical Lead</title>
+<meta name="description" content="Hai Doan — full-stack engineer and technical lead with 14+ years of experience across web, mobile, backend, and cloud. Designs and ships products end-to-end with AI coding agents." />
+<meta property="og:title" content="Hai Doan — Full-Stack Engineer / Technical Lead" />
+<meta property="og:description" content="14+ years across web, mobile, backend, and cloud. Building products end-to-end with AI coding agents." />
+<meta property="og:type" content="profile" />
+<style>
+  :root {
+    --paper: #FBFBF9;
+    --card: #FFFFFF;
+    --ink: #182430;
+    --body: #3F4B57;
+    --muted: #717D89;
+    --accent: #14665F;
+    --accent-soft: #E7F0EE;
+    --hairline: #E2E5E4;
+    --shadow: 0 1px 2px rgba(24, 36, 48, 0.04), 0 8px 24px rgba(24, 36, 48, 0.05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #12181E;
+      --card: #171F27;
+      --ink: #E8ECEF;
+      --body: #B8C2CB;
+      --muted: #7E8994;
+      --accent: #4FB3A5;
+      --accent-soft: #1B2B29;
+      --hairline: #26303A;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+  }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+  html { scroll-behavior: smooth; }
 
-        @keyframes float {
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
 
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
+  .serif { font-family: "Charter", "Iowan Old Style", Georgia, "Times New Roman", serif; }
 
-            50% {
-                transform: translateY(-10px);
-            }
-        }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
 
-        @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
 
-            50% {
-                background-position: 100% 50%;
-            }
+  /* ---------- hero ---------- */
+  .hero { padding: 72px 0 40px; }
+  .hero-top {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .avatar {
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 30%;
+    border: 3px solid var(--card);
+    outline: 1px solid var(--hairline);
+    box-shadow: var(--shadow);
+    flex: none;
+  }
+  h1 {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    line-height: 1.15;
+  }
+  .role-line {
+    margin-top: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .hero-summary {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--hairline);
+    color: var(--body);
+    max-width: 720px;
+  }
+  .hero-summary p + p { margin-top: 12px; }
 
-            100% {
-                background-position: 0% 50%;
-            }
-        }
+  .contact-row {
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 16px;
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    background: var(--card);
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: var(--shadow);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .chip:hover { border-color: var(--accent); text-decoration: none; transform: translateY(-1px); }
+  .chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #1b262c);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            color: #ffffff;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+  /* ---------- sections ---------- */
+  section { padding: 40px 0 8px; }
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+  .section-label::before {
+    content: "";
+    width: 22px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+  .section-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--hairline);
+  }
 
-        header {
-            text-align: center;
-            padding: 100px 20px 60px;
-            animation: fadeInUp 0.8s ease-out;
-            position: relative;
-        }
+  /* ---------- experience timeline ---------- */
+  .xp { position: relative; padding-left: 28px; }
+  .xp::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: var(--hairline);
+    border-radius: 1px;
+  }
+  .entry { position: relative; padding-bottom: 36px; }
+  .entry:last-child { padding-bottom: 8px; }
+  .entry::before {
+    content: "";
+    position: absolute;
+    left: -28px;
+    top: 7px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--paper);
+  }
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .entry .role { font-size: 19px; font-weight: 650; }
+  .entry .dates {
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .entry .company {
+    margin-top: 2px;
+    font-size: 15.5px;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .entry .lede { margin-top: 8px; color: var(--body); }
+  .entry ul {
+    list-style: none;
+    margin-top: 12px;
+  }
+  .entry ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-top: 7px;
+    color: var(--body);
+    font-size: 15px;
+  }
+  .entry ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 9px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 1px;
+  }
+  .stack {
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .stack b {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 11.5px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    margin-right: 8px;
+  }
 
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 3s ease-in-out infinite;
-        }
+  .highlight {
+    margin-top: 18px;
+    background: var(--card);
+    border: 1px solid var(--hairline);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    padding: 18px 20px;
+    box-shadow: var(--shadow);
+  }
+  .highlight .tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .highlight .proj { font-size: 16.5px; font-weight: 650; margin-top: 5px; }
+  .highlight .desc { color: var(--body); font-size: 14.5px; margin-top: 4px; }
+  .highlight ul { margin-top: 8px; }
+  .highlight ul li { font-size: 14.5px; }
 
-        header h1 {
-            font-size: 64px;
-            font-weight: 900;
-            margin-bottom: 20px;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-            letter-spacing: -1px;
-            position: relative;
-            z-index: 1;
-        }
+  /* ---------- skills ---------- */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+  }
+  .skill-card {
+    background: var(--card);
+    border: 1px solid var(--hairline);
+    border-radius: 12px;
+    padding: 20px 22px;
+    box-shadow: var(--shadow);
+  }
+  .skill-card h3 {
+    font-size: 15px;
+    font-weight: 650;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+  .skill-card h3::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 2px;
+    background: var(--accent);
+    flex: none;
+  }
+  .skill-card p { color: var(--body); font-size: 14px; line-height: 1.65; }
 
-        header p {
-            font-size: 22px;
-            opacity: 0.95;
-            max-width: 600px;
-            margin: 0 auto;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-        }
+  /* ---------- projects ---------- */
+  .proj-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 16px;
+  }
+  .proj-card {
+    background: var(--card);
+    border: 1px solid var(--hairline);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .proj-card h3 { font-size: 18px; font-weight: 650; }
+  .proj-card .desc { color: var(--body); font-size: 14.5px; flex: 1; }
+  .proj-links { display: flex; gap: 14px; font-size: 14px; font-weight: 600; }
 
-        .badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-size: 14px;
-            margin: 20px 8px 0;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            font-weight: 500;
-        }
+  /* ---------- meta row (education / languages) ---------- */
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .meta-card {
+    background: var(--card);
+    border: 1px solid var(--hairline);
+    border-radius: 12px;
+    padding: 20px 22px;
+    box-shadow: var(--shadow);
+    font-size: 14.5px;
+    color: var(--body);
+  }
+  .meta-card h3 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .meta-card b { color: var(--ink); font-weight: 600; }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+  footer {
+    margin-top: 48px;
+    padding: 28px 0 40px;
+    border-top: 1px solid var(--hairline);
+    color: var(--muted);
+    font-size: 13.5px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 
-        .hero {
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(20px);
-            border-radius: 24px;
-            padding: 50px;
-            margin: 40px 0;
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3),
-                0 0 1px rgba(255, 255, 255, 0.3) inset;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
+  /* ---------- mobile ---------- */
+  @media (max-width: 640px) {
+    .hero { padding: 44px 0 28px; }
+    .hero-top { gap: 20px; }
+    .avatar { width: 80px; height: 80px; }
+    h1 { font-size: 30px; }
+    .entry-head { flex-direction: column; gap: 2px; }
+  }
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            margin: 40px 0;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 32px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .feature-card h3 {
-            font-size: 24px;
-            margin: 16px 0;
-        }
-
-        .feature-card p {
-            opacity: 0.9;
-            font-size: 16px;
-        }
-
-        .icon {
-            font-size: 48px;
-            margin-bottom: 8px;
-        }
-
-        .cta-section {
-            text-align: center;
-            margin: 70px 0;
-            animation: fadeInUp 0.8s ease-out 0.6s both;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #2d3e50, #1a252f);
-            color: #ffffff;
-            padding: 18px 50px;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
-                0 0 1px rgba(255, 255, 255, 0.5) inset;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4),
-                0 0 1px rgba(255, 255, 255, 0.5) inset;
-        }
-
-        .about {
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(20px);
-            border-radius: 24px;
-            padding: 50px;
-            margin: 50px 0;
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3),
-                0 0 1px rgba(255, 255, 255, 0.3) inset;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            animation: fadeInUp 0.8s ease-out 0.4s both;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .about:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4),
-                0 0 1px rgba(255, 255, 255, 0.3) inset;
-        }
-
-        .about h2 {
-            font-size: 36px;
-            margin-bottom: 32px;
-            text-align: center;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #ffd700, #ffed4e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
-            margin-top: 40px;
-        }
-
-        .about-section {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 28px;
-            border-radius: 16px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .about-section:hover {
-            background: rgba(255, 255, 255, 0.12);
-            transform: translateY(-3px);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .about-section h3 {
-            font-size: 22px;
-            margin-bottom: 20px;
-            color: #ffd700;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .about-section h3::before {
-            content: '▸';
-            color: #4ade80;
-            font-size: 18px;
-        }
-
-        .about-section ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .about-section li {
-            padding: 10px 0;
-            padding-left: 28px;
-            position: relative;
-            font-size: 15px;
-            opacity: 0.95;
-            transition: all 0.2s ease;
-        }
-
-        .about-section li:hover {
-            opacity: 1;
-            padding-left: 32px;
-        }
-
-        .about-section li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #4ade80;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 50px 20px;
-            background: rgba(0, 0, 0, 0.3);
-            margin-top: 100px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        footer a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 16px;
-            opacity: 0.8;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        footer a:hover {
-            opacity: 1;
-            transform: translateY(-2px);
-            display: inline-block;
-        }
-
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            margin: 40px 0;
-            flex-wrap: wrap;
-        }
-
-        .stat {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .stat-number {
-            font-size: 48px;
-            font-weight: 800;
-            color: #ffd700;
-        }
-
-        .stat-label {
-            font-size: 16px;
-            opacity: 0.9;
-            margin-top: 8px;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 42px;
-            }
-
-            header p {
-                font-size: 18px;
-            }
-
-            .hero,
-            .about {
-                padding: 30px 25px;
-            }
-
-            .about h2 {
-                font-size: 28px;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .cta-button {
-                padding: 16px 40px;
-                font-size: 16px;
-            }
-        }
-    </style>
+  /* ---------- print: page doubles as a CV ---------- */
+  @media print {
+    :root {
+      --paper: #fff; --card: #fff; --ink: #111; --body: #333;
+      --muted: #666; --accent: #14665F; --hairline: #ddd; --shadow: none;
+    }
+    body { font-size: 12px; }
+    .hero { padding: 0 0 12px; }
+    .avatar { width: 72px; height: 72px; }
+    h1 { font-size: 26px; }
+    section { padding: 14px 0 0; }
+    .section-label { margin-bottom: 12px; }
+    .entry { padding-bottom: 16px; }
+    .chip { box-shadow: none; padding: 2px 10px; font-size: 11px; }
+    .skill-card, .proj-card, .meta-card, .highlight { box-shadow: none; padding: 10px 12px; }
+    .skills-grid, .proj-grid, .meta-grid { gap: 8px; }
+    a { color: var(--ink); }
+    .proj-links a { color: var(--accent); }
+    footer { display: none; }
+  }
+</style>
 </head>
-
 <body>
-    <header>
-        <h1>👨‍💻 Hai Doan</h1>
-        <p>Full-Stack Engineer / Technical Lead | 14+ years | Mobile • Web • Backend • Cloud</p>
-        <div style="margin-top: 20px;">
-            <span class="badge">🤖 AI-Driven Development</span>
-            <span class="badge">📱 Mobile (Flutter, React Native)</span>
-            <span class="badge">🎨 Frontend</span>
-            <span class="badge">⚙️ Backend</span>
-            <span class="badge">🚀 DevOps</span>
-        </div>
-    </header>
 
-    <div class="container">
-        <div class="hero">
-            <h2
-                style="text-align: center; font-size: 36px; margin-bottom: 28px; font-weight: 800; letter-spacing: -0.5px;">
-                Building Complete Solutions From End to End</h2>
-            <p style="text-align: center; font-size: 18px; opacity: 0.95; line-height: 1.8;">
-                Hi! I'm Hai Doan, a full-stack engineer with 14+ years of experience across web, mobile,
-                backend, and cloud. These days I design and build entire products through AI coding agents —
-                Claude Code and OpenAI Codex — using spec-driven workflows with code review on every change.
-                From Flutter and React apps to Go microservices on Kubernetes, I ship complete,
-                production-ready systems.
-            </p>
-        </div>
+<div class="wrap">
 
-        <div class="about">
-            <h2>🛠️ Technical Skills</h2>
-            <div class="about-content">
-                <div class="about-section">
-                    <h3>Mobile Development</h3>
-                    <ul>
-                        <li>Flutter & Dart</li>
-                        <li>React Native & Expo</li>
-                        <li>Flame Game Engine</li>
-                        <li>Android & iOS Native</li>
-                        <li>State Management</li>
-                        <li>Responsive Design</li>
-                        <li>Firebase & AdMob</li>
-                    </ul>
-                </div>
-
-                <div class="about-section">
-                    <h3>Frontend Development</h3>
-                    <ul>
-                        <li>React.js & Next.js</li>
-                        <li>Vue.js & Nuxt.js</li>
-                        <li>TypeScript & JavaScript</li>
-                        <li>HTML5 & CSS3</li>
-                        <li>Responsive Web Design</li>
-                        <li>Tailwind CSS & MUI</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="about-content" style="margin-top: 24px;">
-                <div class="about-section">
-                    <h3>Backend Development</h3>
-                    <ul>
-                        <li>Node.js (NestJS, Express)</li>
-                        <li>Go (Gin) & gRPC</li>
-                        <li>Python (Django, FastAPI)</li>
-                        <li>REST & GraphQL APIs</li>
-                        <li>PostgreSQL, Cassandra, MongoDB & Redis</li>
-                        <li>Microservices & event-driven (NATS)</li>
-                    </ul>
-                </div>
-
-                <div class="about-section">
-                    <h3>DevOps & Cloud</h3>
-                    <ul>
-                        <li>Docker & Kubernetes</li>
-                        <li>CI/CD Pipelines</li>
-                        <li>AWS & Google Cloud</li>
-                        <li>Linux Server Admin</li>
-                        <li>Prometheus, Grafana & ELK</li>
-                        <li>Infrastructure as Code</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="about-content" style="margin-top: 24px;">
-                <div class="about-section">
-                    <h3>AI-Driven Engineering</h3>
-                    <ul>
-                        <li>Claude Code & OpenAI Codex daily</li>
-                        <li>Custom agent commands, skills & workflows</li>
-                        <li>Spec-driven task decomposition</li>
-                        <li>Layered project memory for agents</li>
-                        <li>Code-review gates on every merge</li>
-                        <li>On-device LLMs (llama.cpp)</li>
-                    </ul>
-                </div>
-
-                <div class="about-section">
-                    <h3>Realtime & Streaming</h3>
-                    <ul>
-                        <li>WebSocket services</li>
-                        <li>P2P live streaming (WebRTC / HLS)</li>
-                        <li>Push notifications (FCM)</li>
-                        <li>Event pipelines (NATS, AWS SNS/SQS)</li>
-                        <li>Live terminal mirroring (tmux)</li>
-                        <li>Metrics & alerting (Prometheus)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="about">
-            <h2>🤖 Featured Project — Agent Remote</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 32px;">
-                <span style="font-size: 17px; display: block;">
-                    Remote, real-time control of AI coding agents — Claude Code, Codex, Gemini — from a Mac
-                    or a phone. A Node.js server bridges live tmux sessions over WebSockets, so you can watch
-                    or take over any coding session from anywhere.
-                </span>
-            </p>
-
-            <div class="about-content">
-                <div class="about-section">
-                    <h3>✨ What it does</h3>
-                    <ul>
-                        <li>Mirrors live tmux coding sessions</li>
-                        <li>Watch or take over from mobile</li>
-                        <li>Push notifications on agent events</li>
-                        <li>Encrypted device pairing</li>
-                        <li>Multi-session, multi-agent support</li>
-                        <li>macOS, Linux & Windows (WSL2)</li>
-                    </ul>
-                </div>
-
-                <div class="about-section">
-                    <h3>🛠️ Technical Stack</h3>
-                    <ul>
-                        <li>Node.js server (Express, ws, node-pty)</li>
-                        <li>React Native (Expo) mobile app</li>
-                        <li>Firebase Cloud Messaging</li>
-                        <li>ed25519-based device pairing</li>
-                        <li>tmux session bridge</li>
-                        <li>App Store delivery via fastlane</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="about">
-            <h2>🎮 Featured Game — Tap Perfect 2D</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 32px;">
-                <span style="font-size: 17px; display: block;">
-                    A challenging one-tap survival game with minimalist stick figure aesthetics. Features
-                    progressive difficulty, dynamic enemy AI, responsive screen scaling, and smooth 60 FPS performance.
-                </span>
-            </p>
-
-            <div class="about-content">
-                <div class="about-section">
-                    <h3>✨ Game Features</h3>
-                    <ul>
-                        <li>One-tap gameplay mechanics</li>
-                        <li>Smooth 60 FPS performance</li>
-                        <li>Responsive screen scaling</li>
-                        <li>4-stage weapon progression</li>
-                        <li>Particle effects and animations</li>
-                        <li>Sound effects and haptics</li>
-                        <li>Daily streak tracking</li>
-                        <li>Score milestones</li>
-                    </ul>
-                </div>
-
-                <div class="about-section">
-                    <h3>🛠️ Technical Stack</h3>
-                    <ul>
-                        <li>Built with Flutter 3.27+</li>
-                        <li>Flame game engine</li>
-                        <li>Firebase Analytics</li>
-                        <li>AdMob monetization</li>
-                        <li>Android & iOS support</li>
-                        <li>Optimized for performance</li>
-                        <li>Multilingual (EN/VI)</li>
-                        <li>Privacy-focused</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="cta-section">
-            <h2 style="margin-bottom: 24px;">📬 Get In Touch</h2>
-            <p style="margin-bottom: 32px; font-size: 17px; opacity: 0.9;">
-                Interested in collaborating or have a project in mind? Let's connect!
-            </p>
-            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                <a href="mailto:haidt3004@gmail.com" class="cta-button">📧 Email Me</a>
-                <a href="https://www.linkedin.com/in/hai-doan-thanh-a568982b7" class="cta-button">💼 LinkedIn</a>
-            </div>
-        </div>
+  <!-- ================= HERO ================= -->
+  <header class="hero">
+    <div class="hero-top">
+      <img class="avatar" src="avatar.jpeg" alt="Portrait of Hai Doan" />
+      <div>
+        <h1 class="serif">Hai Doan</h1>
+        <div class="role-line">Full-Stack Engineer&ensp;·&ensp;Technical Lead</div>
+      </div>
     </div>
+    <div class="hero-summary">
+      <p>
+        Full-stack engineer with 14+ years of experience designing and building scalable web
+        applications and system architectures across JavaScript/TypeScript, PHP, Go, and Python.
+        Experienced in leading engineering teams and delivering projects from architecture and
+        development to cloud deployment using AWS, GCP, Docker, Kubernetes, and CI/CD.
+      </p>
+      <p>
+        I use AI development tools — Claude (Claude Code), GitHub Copilot, and OpenAI Codex —
+        in my daily workflow to speed up design, implementation, debugging, and documentation,
+        while ensuring all production code is carefully reviewed and validated.
+      </p>
+    </div>
+    <div class="contact-row">
+      <a class="chip" href="mailto:haidt3004@gmail.com"><span class="dot"></span>haidt3004@gmail.com</a>
+      <a class="chip" href="https://www.linkedin.com/in/hai-doan-thanh-a568982b7"><span class="dot"></span>LinkedIn</a>
+      <a class="chip" href="https://github.com/haidt3004"><span class="dot"></span>GitHub</a>
+      <span class="chip"><span class="dot"></span>Ho Chi Minh City, Vietnam</span>
+    </div>
+  </header>
 
-    <footer>
-        <p style="opacity: 0.8;">© 2026 Hai Doan. Building products end-to-end — one commit at a time.</p>
-    </footer>
+  <!-- ================= EXPERIENCE ================= -->
+  <section id="experience">
+    <div class="section-label">Experience</div>
+    <div class="xp">
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="role">Full-Stack Engineer</div>
+          <div class="dates">MAR 2026 – JUN 2026</div>
+        </div>
+        <div class="company">JDO Group</div>
+        <p class="lede">
+          Designed and built multiple products — real-time messaging, fintech payments, cloud
+          storage — end-to-end through AI coding agents (Claude Code, OpenAI Codex); every
+          change reviewed before merge.
+        </p>
+        <ul>
+          <li>Designed the system architecture across the products: service boundaries, API gateways, event flows on NATS, and data design across PostgreSQL, Cassandra, Redis and MinIO</li>
+          <li>Ran a spec-driven agentic workflow — per-service tasks from specs, agents implementing and testing, merges gated by automated code review</li>
+          <li>Real-time messaging platform — Go chat services (messaging, WebSocket, streaming, rooms) on NATS, Cassandra and Redis; built the React web client and a P2P live-streaming SDK (WebRTC/HLS) for watch-together viewing</li>
+          <li>Digital wallet and payment platform for schools — main contributor to the core backend (Go, Gin, PostgreSQL); worked on payment integration APIs, React portals and the React Native (Expo) mobile app</li>
+          <li>Personal cloud storage app — no-login browser storage with shareable spaces; React SPA, Go API gateway and gRPC microservices on Kubernetes</li>
+        </ul>
+        <p class="stack"><b>Stack</b>Go (Gin) · gRPC · Node.js · React · React Native (Expo) · PostgreSQL · Cassandra · Redis · NATS · MinIO · Prometheus · Docker · Kubernetes</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="role">Full-Stack Engineer / Technical Lead</div>
+          <div class="dates">JUN 2020 – FEB 2026</div>
+        </div>
+        <div class="company">ITADS</div>
+        <p class="lede">E-commerce insurance platforms and custom business applications.</p>
+        <ul>
+          <li>Led a development team of 4–6 engineers; designed system architecture and guided implementation across backend, frontend, and infrastructure</li>
+          <li>Built and maintained applications using NestJS, Go (Gin), Django, Laravel, Next.js, and Flutter; designed REST, GraphQL and gRPC APIs for microservice-based systems</li>
+          <li>Integrated AI-assisted development into the team's daily workflow — Claude (Claude Code), GitHub Copilot and OpenAI Codex — for code generation, refactoring, test scaffolding and code review</li>
+          <li>Set up CI/CD pipelines and cloud infrastructure on AWS; deployed containerized services with Docker and Kubernetes</li>
+        </ul>
+        <p class="stack"><b>Stack</b>NestJS · Express · Go (Gin) · gRPC · Next.js · Nuxt · Vue · Django · Flutter · Laravel · AWS · GCP · MySQL · MongoDB · PostgreSQL · Redis · DynamoDB</p>
+
+        <div class="highlight">
+          <div class="tag">Project highlight</div>
+          <div class="proj">Vehicle Insurance Sales Platform — Futuready</div>
+          <p class="desc">Large-scale e-commerce platform for purchasing vehicle insurance online.</p>
+          <ul>
+            <li>Helped design the microservices and event-driven architecture on AWS (SNS/SQS, Lambda)</li>
+            <li>Implemented NestJS backend services; built several Next.js frontends and a shared UI component library</li>
+            <li>Designed the data architecture on PostgreSQL and DynamoDB; deployed on AWS ECS behind Application Load Balancers</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="role">Full-Stack Developer / Team Lead</div>
+          <div class="dates">MAY 2018 – JUN 2020</div>
+        </div>
+        <div class="company">The App Team</div>
+        <p class="lede">
+          Delivered custom web applications — e-commerce, insurance, and content platforms —
+          across multiple client projects, while helping coordinate a small team.
+        </p>
+        <ul>
+          <li>Led a development team of 3–5 engineers, coordinating technical work and supporting delivery</li>
+          <li>Developed backend services and APIs using Node.js (Express, NestJS) and PHP (Laravel)</li>
+          <li>Built and maintained frontend features and integrated them with backend systems</li>
+        </ul>
+        <p class="stack"><b>Stack</b>Express · NestJS · Next.js · Laravel · WordPress · AWS · MySQL · MongoDB</p>
+
+        <div class="highlight">
+          <div class="tag">Project highlight</div>
+          <div class="proj">Human Life Insurance Sales Platform — CareHive</div>
+          <p class="desc">E-commerce platform where customers explore and purchase life insurance products online.</p>
+          <ul>
+            <li>Built the customer portal using React, with WordPress as a headless CMS for SEO-focused content</li>
+            <li>Developed backend services using NestJS; deployed on AWS EC2 with CloudFront CDN</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="role">Web Developer / Team Lead</div>
+          <div class="dates">AUG 2014 – MAY 2018</div>
+        </div>
+        <div class="company">Verzdesign</div>
+        <ul>
+          <li>Developed and maintained web applications; led a small development team and coordinated task delivery</li>
+          <li>Built production systems using Yii 1 and AngularJS</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="role">Web Developer</div>
+          <div class="dates">OCT 2011 – AUG 2014</div>
+        </div>
+        <div class="company">Exto Solution, Switzerland</div>
+        <ul>
+          <li>Developed a FOREX trading website with Joomla and a Forex news website with WordPress</li>
+          <li>Created automation scripts for trading platform integration; built customer portals using Laravel and modules for Vtiger CRM</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills">
+    <div class="section-label">Core Skills</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Frontend</h3>
+        <p>TypeScript; React (Vite, Next.js), React Native (Expo), Vue (Nuxt), Flutter; Tailwind CSS</p>
+      </div>
+      <div class="skill-card">
+        <h3>Backend &amp; APIs</h3>
+        <p>Node.js (Express, NestJS, Koa), Go (Gin), Python (Django, Flask, FastAPI), PHP (Laravel); REST, GraphQL, gRPC, WebSocket, WebRTC; NATS, AWS SNS/SQS; JWT, OAuth2; microservices &amp; API gateways</p>
+      </div>
+      <div class="skill-card">
+        <h3>Databases &amp; Storage</h3>
+        <p>PostgreSQL, MySQL, SQLite, MongoDB, Cassandra, DynamoDB, Redis, Firebase, MinIO; Prisma, Sequelize, SQLAlchemy</p>
+      </div>
+      <div class="skill-card">
+        <h3>Cloud &amp; DevOps</h3>
+        <p>Docker &amp; Kubernetes; CI/CD (GitHub Actions, GitLab CI, Jenkins, Bitbucket Pipelines); AWS, GCP, Azure, DigitalOcean; Prometheus, Grafana, ELK</p>
+      </div>
+      <div class="skill-card">
+        <h3>AI-Assisted Development</h3>
+        <p>Claude (Claude Code), GitHub Copilot, OpenAI Codex in daily development and team workflows; AI-assisted prototyping, refactoring, debugging, testing and documentation; human review for all AI-generated production code; on-device LLMs (llama.cpp)</p>
+      </div>
+      <div class="skill-card">
+        <h3>AI Agent Management</h3>
+        <p>Custom Claude Code commands, skills and workflows (plan → work → ship); layered project memory with generated indexes; task-file planning with code-review and commit gates; overnight autonomous runs</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects">
+    <div class="section-label">Personal Projects</div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <h3>Agent Remote</h3>
+        <p class="desc">
+          Remote control for AI coding agents (Claude Code, Codex, Gemini). A Node.js server
+          bridges live tmux sessions over WebSockets to desktop and mobile clients — watch or
+          take over any coding session from anywhere. React Native (Expo) mobile app with push
+          notifications and encrypted device pairing; App Store delivery via fastlane.
+        </p>
+        <p class="stack"><b>Stack</b>Node.js · WebSocket · node-pty · tmux · React Native (Expo) · FCM</p>
+      </div>
+      <div class="proj-card">
+        <h3>Tap Perfect 2D</h3>
+        <p class="desc">
+          One-tap survival game for Android and iOS with minimalist stick-figure art —
+          progressive difficulty, particle effects, daily streaks, and Firebase Analytics.
+        </p>
+        <p class="stack"><b>Stack</b>Flutter · Flame · Firebase</p>
+        <div class="proj-links">
+          <a href="https://play.google.com/store/apps/details?id=com.hdt.tapperfect2d">Google Play →</a>
+          <a href="https://apps.apple.com/us/app/tap-perfect-2d/id6757596817">App Store →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION / LANGUAGES ================= -->
+  <section id="education">
+    <div class="section-label">Education &amp; Languages</div>
+    <div class="meta-grid">
+      <div class="meta-card">
+        <h3>Education</h3>
+        <b>Ton Duc Thang University</b><br />
+        Bachelor of Information Technology<br />
+        2006 – 2011
+      </div>
+      <div class="meta-card">
+        <h3>Languages</h3>
+        <b>English</b> — good reading and writing; conversational speaking and listening<br />
+        <b>Vietnamese</b> — native
+      </div>
+      <div class="meta-card">
+        <h3>Interests</h3>
+        Reading, movies, football, guitar; researching new technologies.
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Hai Doan — Ho Chi Minh City, Vietnam</span>
+    <span><a href="mailto:haidt3004@gmail.com">haidt3004@gmail.com</a></span>
+  </footer>
+
+</div>
 
 </body>
-
 </html>
